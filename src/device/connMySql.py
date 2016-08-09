@@ -6,6 +6,7 @@ Created on 2015 year 8  mouth 1 day
 # coding=utf-8
 import MySQLdb
 
+
 class conn:
     def connDB(self):        
         conn=MySQLdb.connect(host="127.0.0.1",port=3306,user="root",passwd="",db="client_performance")       
