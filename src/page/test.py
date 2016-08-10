@@ -10,12 +10,15 @@ control=win32com.client.Dispatch('HttpWatch.Controller')
 #open the ie browser
 plugin=control.firefox.new()
 
-#start recording http traffic
+#close Filter
 plugin.Log.EnableFilter(False)
-#plugin.clearCache
+plugin.Clear()
+plugin.clearCache
+#start recording http traffic
 plugin.Record()
 #goto to the url and wait for the page to be loaded
 plugin.GotoURL("a.xcar.com.cn")
+# don't return until the page loads
 control.Wait(plugin,-1)
 #stop recording
 plugin.Stop()
